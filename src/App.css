@@ -1,0 +1,322 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: monospace;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-size: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+p {
+  font-family: monospace;
+  color: rgb(255, 255, 255);
+  font-size: 1rem;
+  padding-bottom: 1rem;
+}
+
+.contenedor {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(135deg, #262834 30% , #d8f1f5 70%);
+  padding: 5px;
+}
+
+.calculadora {
+  width: max-content;
+  box-shadow: 0px 2px 5px rgb(0, 0, 0);
+  background-color: #191B28;
+}
+
+.historial {
+  background-color: #191B28;
+  display: flex;
+  flex-direction: column;
+  width: 19.024rem;
+  height: 20.625rem;
+  padding: 5px;
+}
+
+.historial-boton {
+  position: relative;
+  z-index: 10;
+  background-color: #191B28;
+  padding: 5px 0px 2px 0px;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.historial-boton > button {
+  color: rgb(255, 255, 255);
+  outline: none;
+  background-color: #191B28;
+  border: 1px solid #191B28;
+  cursor: pointer;
+  padding-left: 0.2rem;
+}
+
+.historial-boton > button:hover {
+  color: #56cbdb; 
+}
+
+.historial-boton > button > svg {
+  font-size: 1.2rem;
+}
+
+.historial > .historial-calculos {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  overflow-y: scroll;
+  width: 18.4rem;
+  
+}
+
+.historial > .historial-calculos > p {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  color: #56cbdb/*rgb(255, 179, 2)*/;
+  width: inherit;
+  text-align: center;
+}
+
+.formula-resultado {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 5px;
+  background-color: #191B28;
+}
+
+.formula {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background-color: #191B28;
+  width: 18.223rem;
+  margin-bottom: 5px ;
+}
+
+.formula > p {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  color: #56cbdb/*rgb(255, 179, 2)*/;
+  margin: 0px;
+  overflow: auto;
+  width: inherit;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.resultado {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background-color: #191B28;
+  width: 18.223rem;
+  
+}
+
+.resultado > p {
+  font-size: 1.5rem;
+  color: rgb(255, 255, 255);
+  font-family: 'Orbitron', sans-serif;
+  overflow: auto;
+  margin: 0px;
+  width: inherit;
+  text-align: right;
+}
+
+.botones {
+  /*border: 2px solid #000;*/
+  background-color: #191B28;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.botones > div > button {
+  width: 4.6rem;
+  height: 4rem;
+  color: #fff;
+  outline: none;
+  background-color: #202336;
+  border: 1px solid #191B28;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.botones > div > button:hover {
+  border: none;
+  color: #56cbdb;
+  outline: 2px solid #5a91a0;
+  background-image: radial-gradient(circle, rgba(255,0,0,0), #56cbdb);
+  position: relative;
+  z-index: 3;
+}
+
+.botones > div > button[name=operators] {
+  background: #56cbdb;
+}
+
+.botones > div > button[name=operators]:hover {
+  color: #56cbdb;
+  background-color: #fff;
+}
+
+.botones > div > button[value=res]{
+  background: #56cbdb/*#23978D*/;
+}
+
+.botones > div > button[value=res]:hover {
+  color: #56cbdb;
+  background-color: #fff;
+}
+
+.botones > div > button[value=d] {
+  color: #56cbdb;
+}
+
+.botones > div > button[value=d]:hover {
+  color: #56cbdb;
+  background: #fff;
+}
+
+.row-1 {
+  display: flex;
+  flex-direction: row;
+}
+
+.row-1 > button[value=AC]{
+  flex-grow: 2;
+  background: #56cbdb;
+}
+
+.row-1 > button[value=AC]:hover{
+  color: #56cbdb;
+  background: #fff;
+}
+
+.row-5 {
+  display: flex;
+  flex-direction: row;
+}
+
+.row-5 > button[value=res]{
+  flex-grow: 2;
+}
+
+.icono {
+  color: #04d8f9;
+  font-size: 1.5rem;
+  animation: App-logo-float infinite 7s linear;
+}
+
+.icono:hover {
+  color: #000;
+  animation: App-logo-float infinite 2s linear;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, rgba(235, 235, 235, 0.52) 0%, rgb(191, 191, 191) 100%);
+  border-radius: 5px
+}
+
+@keyframes App-logo-float {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 320px) {
+  .botones > div > button {
+      width: 3.6rem;
+      height: 3rem; 
+  }
+
+  .formula {
+      width: 14.223rem;
+  }
+
+  .resultado {
+      width: 14.223rem;
+  }
+
+  .historial {
+      width: 15.024rem;
+      height: 15.625rem;
+  }
+
+  .historial > .historial-calculos{
+      width: inherit;
+  }
+
+}
+
+@media (min-width: 321px) and (max-width: 766px) {
+  .botones > div > button { 
+      font-size: 1rem;
+  }
+
+  h1 {
+      font-size: 1.5rem;
+  }
+
+  p {
+      font-size: 1rem;
+  }
+
+  .icono {
+      font-size: 1.5rem;
+  }
+
+  .formula > p {
+      font-size: 1.2rem;
+  }
+
+  .resultado > p {
+      font-size: 1.6rem;
+  }  
+
+}
+
+@media (min-width: 767px) and (max-width: 1366px) {
+  .botones > div > button {
+      font-size: 1rem;
+  }
+
+  h1 {
+      font-size: 1.5rem;
+  }
+
+  p {
+      font-size: 1rem;
+  }
+
+  .icono {
+      font-size: 1.5rem;
+  }
+
+  .formula > p {
+      font-size: 1.1rem;
+  }
+
+  .resultado > p {
+      font-size: 1.5rem;
+  }  
+
+}
